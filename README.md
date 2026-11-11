@@ -62,12 +62,14 @@ Put these in place before any real work goes through the bridge.
 ## Quick start
 
 1. Do the steps in [Secure setup first](#secure-setup-first).
-2. Create a folder in a cloud drive your assistants can reach (for example Google Drive), and share it with each assistant's account.
-3. Copy the STATUS and AUDIT-INDEX templates from the `templates` folder into it. Rename STATUS to "[Your project] STATUS" and fill in the pin block. The LOG template shows what each assistant's log looks like.
+2. Create a folder in a cloud drive your assistants can reach (for example Google Drive), and give each assistant access to it. In most AI apps you do this inside the app, by connecting the drive (often called a connector, connected app or extension) while signed in to the account that holds the folder. If an assistant has a cloud account of its own, share the folder with that account as an editor.
+3. Make a STATUS document and an AUDIT-INDEX document in the folder, following the templates in the `templates` folder. The STATUS and AUDIT-INDEX templates each say what to title the document and have the text to copy in a box. Fill in the pin block in STATUS. The LOG template shows what each assistant's log looks like.
 4. Put [PROTOCOL.md](PROTOCOL.md) in the folder too.
 5. Paste the starter prompt from section 10 of the protocol into each assistant's saved instructions, with its own name and tag.
 6. Name a general lead on the GENERAL_LEAD line: the assistant with the most demonstrated skill for this project, with the reason.
 7. Start a session with each assistant and ask it to report what its tools can actually do.
+
+To see what a working project looks like before you start, open [`examples/`](examples/README.md): a small, made-up project with a filled-in STATUS, an AUDIT-INDEX, three logs and a STATUS proposal that follow one decision from your words, through a second assistant's check, to your confirmation.
 
 The full protocol has 19 rules. If you remember only seven:
 
@@ -115,6 +117,7 @@ The protocol's own "Known limits" section lists all of these and more. Read it f
 ## What has been tested
 
 - The protocol has been in daily use by its author since September 2026, with Claude, Gemini, Grok and Perplexity working through a shared Google Drive folder, and ChatGPT with the author pasting by hand. This includes scheduled morning and evening checks.
+- The author's own project began before the "Secure setup first" steps were written. At least two of them are not yet done there: step 1 (a separate account) and step 7 (an encrypted copy). Both are planned.
 - Section 16 describes an optional server pipeline (tool gate, single-use approvals, hash-linked records). A reference implementation exists and passed its own suite of 78 automated tests on 2026-11-01. Passing them does not complete the acceptance checks in section 16, which have not all been run and logged, so the pipeline is still a design. It is not running in production and is not part of this release.
 - It has not been tested by other people yet. Reports from your own use are welcome.
 
@@ -126,16 +129,17 @@ The protocol's own "Known limits" section lists all of these and more. Read it f
 
 Other people are working on parts of the same problem, and they are worth knowing:
 
-- CHAP, the Collaborative Human-Agent Protocol (Brightbeam AI, 2026, public draft): an open protocol for auditable human and AI teamwork, where a person's approval becomes a signed record. arXiv 2606.09751.
-- LLM Council, an open-source project: several models answer a question, rank each other's answers anonymously, and a chairman model writes the final answer.
+- CHAP, the Collaborative Human-Agent Protocol (Brightbeam AI, 2026, public draft): an open protocol for auditable human and AI teamwork. With its optional signing profile, a person's approval becomes a signed record. arXiv 2606.09751.
+- LLM Council (github.com/karpathy/llm-council), a public project on GitHub: several models answer a question, rank each other's answers anonymously, and a chairman model writes the final answer.
 - ArtifactBridge: a shared document library that connected AI tools read, where agents propose changes and people approve them.
 
-What this protocol adds is the combination: the consumer AI chat plans you already pay for, coordinated through shared files in a folder you own, with every decision backed by your own words and separate zones for separate parts of your life. We have not found another project that puts all of these together. If you know of one, please say so.
+What this protocol adds is the combination: the consumer AI chat plans you already pay for, coordinated through shared files in a folder you own, with every decision backed by your own words and separate zones for separate parts of your life. In the author's searches up to November 2026, we did not find another project that puts all of these together. That was not a full survey, so if you know of one, please say so.
 
 ## Files
 
 - [PROTOCOL.md](PROTOCOL.md): the full protocol, version 1.0.
 - `templates/`: starter STATUS, AUDIT-INDEX and LOG files.
+- [`examples/`](examples/README.md): a small, made-up project that follows one decision from your words to your confirmation.
 - [CITATION.cff](CITATION.cff): how to cite this work.
 - [LICENSE](LICENSE): the license.
 
@@ -143,4 +147,4 @@ What this protocol adds is the combination: the consumer AI chat plans you alrea
 
 Accountable Multi-AI Bridge Protocol. Created and authored by Shane Michael Clanton.
 
-License: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/) for the protocol text, this README and the templates. You may share and adapt them for any purpose, as long as you credit the author, link to the license, say if you made changes, and share any adapted version under the same license.
+License: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/) for the protocol text, this README, the templates and the examples. You may share and adapt them for any purpose, as long as you credit the author, link to the license and say if you made changes. If you share an adapted version, it must use the same license or a compatible one. The license itself has the full terms.
