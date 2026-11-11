@@ -1,3 +1,8 @@
+# STATUS template
+
+Make a new document in your project folder titled "[PROJECT] STATUS", with your project's name in place of [PROJECT]. Copy everything inside the box below into it. Replace each part in [square brackets], and delete the reminder "; 15 lines at most" from the CURRENT STATE line. The lines between the two `---` lines are the pin block.
+
+```text
 ---
 ADOPTED_PROTOCOL: [exact title of the protocol file in your folder, for example PROTOCOL.md]
 HISTORY_FILE: none
@@ -34,3 +39,4 @@ OPERATIONAL RHYTHM (scheduled jobs; "planned" until each owner checks its own sc
 DATED ENTRIES (newest at the end; never rewritten, only replaced by later entries)
 - [YYYY-MM-DD, time] [OWN- tag] [what was decided, in the Owner's words where possible]
   AUDIT-TAG: [OWN- tag] | [type] | [short summary] | Log: [log title]
+```

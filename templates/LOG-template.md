@@ -1,3 +1,8 @@
+# LOG template
+
+Each assistant saves every log as a new document titled LOG-YYYY-MM-DD-MODEL-NN (section 7). The box below shows what a log holds. The assistants write logs, so you normally do not copy this yourself.
+
+```text
 AUDIT-TAG: [none, or OWN-YYYYMMDD-NN] | Zone: [letter] | [type: REVIEW / NEW FILE / DIRECTED-EDIT / SYNC] | [one-line summary]
 
 LOG-YYYY-MM-DD-MODEL-NN
@@ -21,3 +26,4 @@ Future state:
 
 Next step / requests:
 - [who should do what; reviews list problems, not approval (rule 10)]
+```
